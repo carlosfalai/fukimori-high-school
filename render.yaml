@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: fukimori-high-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SESSION_SECRET
+        value: fukimori-high-super-secret-key-2024
+      - key: SPOTIFY_CLIENT_ID
+        value: 6ea4c2c4b8c540d2948cf432973f2076
+      - key: SPOTIFY_CLIENT_SECRET
+        value: d3e1c9d2d85b4355bfd638d80422f659

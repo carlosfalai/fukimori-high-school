@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "fukimori-high-backend",
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "SPOTIFY_CLIENT_ID": "6ea4c2c4b8c540d2948cf432973f2076",
+    "SPOTIFY_CLIENT_SECRET": "d3e1c9d2d85b4355bfd638d80422f659",
+    "SESSION_SECRET": "fukimori-high-super-secret-key-2024"
+  }
+}

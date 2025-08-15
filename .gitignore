@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production
+/build
+/dist
+
+# Environment and secrets
+.env
+.env.local
+attached_assets/Pasted*.txt
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# Deployment files
+deploy*.zip
+*.tar.gz
+
+# Temporary files
+.local/
+.config/
