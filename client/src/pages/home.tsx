@@ -1,13 +1,12 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import landingImage from "@assets/Gemini_Generated_Image_ci6hn5ci6hn5ci6h.jpeg";
+// Removed landingImage import - using gradient background instead
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black">
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: `url('${landingImage}')` }}
+        className="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-pink-900/40"
       ></div>
       
       <div className="relative z-10 max-w-2xl w-full px-4 py-8 text-center">
