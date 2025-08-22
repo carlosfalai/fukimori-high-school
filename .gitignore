@@ -25,3 +25,6 @@ deploy*.zip
 # Temporary files
 .local/
 .config/
+
+# Local Netlify folder
+.netlify

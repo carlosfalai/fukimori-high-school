@@ -8,7 +8,7 @@ const app = express();
 // Configure CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://fukimori-high-school.netlify.app', 'https://fukimori-high-school.onrender.com']
+    ? ['https://fukimori-high-school.netlify.app', 'https://fukimorihigh.com', 'https://www.fukimorihigh.com', 'https://fukimori-high-school.onrender.com']
     : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001'],
   credentials: true,
 }));

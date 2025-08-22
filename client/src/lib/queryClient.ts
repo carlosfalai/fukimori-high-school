@@ -26,15 +26,20 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+const API_BASE_URL = import.meta.env.PROD 
+  ? 'https://fukimori-high-school.onrender.com' 
+  : '';
+
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  console.log(`API Request: ${method} ${url}`, data ? { data } : '');
+  const fullUrl = `${API_BASE_URL}${url}`;
+  console.log(`API Request: ${method} ${fullUrl}`, data ? { data } : '');
   
   try {
-    const res = await fetch(url, {
+    const res = await fetch(fullUrl, {
       method,
       headers: data ? { "Content-Type": "application/json" } : {},
       body: data ? JSON.stringify(data) : undefined,
@@ -61,10 +66,11 @@ export const getQueryFn: <T>(options: {
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
     const url = queryKey[0] as string;
-    console.log(`Query: GET ${url}`);
+    const fullUrl = `${API_BASE_URL}${url}`;
+    console.log(`Query: GET ${fullUrl}`);
     
     try {
-      const res = await fetch(url, {
+      const res = await fetch(fullUrl, {
         credentials: "include",
       });
 
